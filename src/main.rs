@@ -1,6 +1,6 @@
 use std::io;
 
-fn fibonacci(x: u16) -> u16 {
+fn fibonacci(x: u128) -> u128 {
     match x {
         0 => 0,
         1 | 2 => 1,
@@ -19,7 +19,7 @@ fn main() {
         .read_line(&mut character)
         .expect("Failed to read line");
 
-    let number: u16 = match character.trim().parse() {
+    let number: u128 = match character.trim().parse() {
         Ok(num) => { num }
         Err(_) => {
             println!("No number given, bailing out!");
