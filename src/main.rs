@@ -1,11 +1,15 @@
 use std::io;
 
 fn fibonacci(x: u128) -> u128 {
-    match x {
-        0 => 0,
-        1 | 2 => 1,
-        _ => fibonacci(x - 1) + fibonacci(x - 2)
+    fn fib(x: u128, a: u128, b: u128) -> u128 {
+        match x {
+            0 => a,
+            1 => b,
+            _ => fib(x - 1, b, a + b)
+        }
     }
+
+    fib(x, 0, 1)
 }
 
 
